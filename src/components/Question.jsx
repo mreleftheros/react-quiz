@@ -10,7 +10,7 @@ const Question = ({
 }) => {
   return (
     <div>
-      <h2 className="bg-green-500 text-slate-200 text-4xl font-bold p-4 pl-6 rounded">
+      <h2 className="bg-green-500 text-slate-200 text-4xl font-bold p-4 pl-6 rounded mb-4">
         {`${currentIndex + 1}. `}
         {question}
       </h2>
@@ -20,6 +20,8 @@ const Question = ({
             key={index}
             index={index}
             answer={answer}
+            selectedAnswer={selectedAnswer}
+            correctAnswer={correctAnswer}
             onSelectAnswer={answer =>
               dispatch({ type: "SELECT_ANSWER", payload: answer })
             }
