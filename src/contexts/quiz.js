@@ -21,8 +21,6 @@ const reducer = (state, action) => {
         correctAnswer: decodeURIComponent(result.correct_answer)
       }));
 
-      console.log(questions);
-
       return {
         ...state,
         questions,

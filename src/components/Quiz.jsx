@@ -3,6 +3,7 @@ import { QuizContext } from "../contexts/quiz";
 import Button from "./Button";
 import Question from "./Question";
 import Results from "./Results";
+import Spinner from "./shared/Spinner";
 
 const triviaApi =
   "https://opentdb.com/api.php?amount=10&type=multiple&encode=url3986";
@@ -26,11 +27,16 @@ const Quiz = () => {
       .then(res => res.json())
       .then(data => {
         dispatch({ type: "FETCH_QUESTIONS", payload: data.results });
-        setIsLoading(false);
+        // setIsLoading(false);
       });
   }, []);
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div className="w-3/4 min-h-screen mx-auto flex justify-center items-center text-slate-900 bg-white">
+        <Spinner message={"Fetching Questions..."} />
+      </div>
+    );
 
   if (showResults)
     return (
