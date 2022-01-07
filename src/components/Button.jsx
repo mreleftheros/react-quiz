@@ -5,7 +5,7 @@ const Button = ({ children, type, isDisabled, dispatch }) => {
 
   return (
     <button
-      className={`text-slate-200 cursor-pointer px-4 py-3 rounded-lg text-xl ${btnClass}`}
+      className={`text-slate-100 cursor-pointer px-4 py-3 rounded-lg text-xl ${btnClass}`}
       type={type}
       disabled={isDisabled}
       onClick={() => {

@@ -9,7 +9,7 @@ const initialState = {
   currentIndex: 0,
   selectedAnswer: "",
   showResults: false,
-  correctAnswers: 0
+  correctAnswersCount: 0
 };
 
 const reducer = (state, action) => {

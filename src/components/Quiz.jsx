@@ -12,7 +12,7 @@ const Quiz = () => {
       selectedAnswer,
       shuffledAnswers,
       showResults,
-      correctAnswers
+      correctAnswersCount
     },
     dispatch
   } = useContext(QuizContext);
@@ -24,7 +24,7 @@ const Quiz = () => {
   if (showResults)
     return (
       <Results
-        correctAnswers={correctAnswers}
+        correctAnswersCount={correctAnswersCount}
         total={quizData.length}
         dispatch={dispatch}
       />
