@@ -20,7 +20,11 @@ const reducer = (state, action) => {
 
       return { ...state, shuffledAnswers };
     case "NEXT_QUESTION":
-      return { ...state, currentIndex: state.currentIndex + 1 };
+      return {
+        ...state,
+        currentIndex: state.currentIndex + 1,
+        selectedAnswer: ""
+      };
     default:
       return state;
   }

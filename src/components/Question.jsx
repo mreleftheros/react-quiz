@@ -7,13 +7,12 @@ const Question = ({
   selectedAnswer,
   dispatch
 }) => {
-
   return (
     <div className="text-center">
       <h2 className="bg-green-400 text-slate-200 text-4xl font-bold p-4">
         {question}
       </h2>
-      <div className="flex flex-wrap justify-center select-none my-10">
+      <div className="grid md:grid-cols-2 md:grid-rows-2 select-none">
         {answers.map((answer, index) => (
           <Answer
             key={index}

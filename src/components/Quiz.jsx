@@ -20,7 +20,7 @@ const Quiz = () => {
           Current Question {currentIndex + 1}/{quizData.length}
         </div>
       </div>
-      <div className="flex flex-col justify-around items-center flex-auto">
+      <div className="flex flex-col justify-around flex-auto">
         <Question
           question={quiz.question}
           answers={shuffledAnswers || []}
@@ -28,9 +28,11 @@ const Quiz = () => {
           selectedAnswer={selectedAnswer}
           dispatch={dispatch}
         />
-        <Button isDisabled={!selectedAnswer} dispatch={dispatch}>
-          Next Question
-        </Button>
+        <div className="align-middle mx-auto">
+          <Button isDisabled={!selectedAnswer} dispatch={dispatch}>
+            Next Question
+          </Button>
+        </div>
       </div>
     </div>
   );
