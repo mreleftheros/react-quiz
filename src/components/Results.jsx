@@ -8,10 +8,10 @@ const Results = ({ correctAnswersCount, total, dispatch }) => {
         <h2 className="bg-purple-700 text-4xl font-bold p-4 text-slate-100">
           {renderCongrats(correctAnswersCount, total)}
         </h2>
-        <p className="text-xl my-4">
+        <p className="text-2xl my-4">
           You answered {correctAnswersCount}/{total}
         </p>
-        <div className="my-8 text-xl">
+        <div className="my-8 text-2xl">
           Total score:{" "}
           <span className="text-purple-700 font-bold">
             {((correctAnswersCount / total) * 100).toFixed(0)}%

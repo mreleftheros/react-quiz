@@ -26,11 +26,11 @@ const reducer = (state, action) => {
       const currentIndex = showResults
         ? state.currentIndex
         : state.currentIndex + 1;
-      const correctAnswers =
+      const correctAnswersCount =
         state.selectedAnswer ===
         state.quizData[state.currentIndex].correctAnswer
-          ? state.correctAnswers + 1
-          : state.correctAnswers;
+          ? state.correctAnswersCount + 1
+          : state.correctAnswersCount;
       const selectedAnswer = "";
 
       return {
@@ -38,7 +38,7 @@ const reducer = (state, action) => {
         currentIndex,
         selectedAnswer,
         showResults,
-        correctAnswers
+        correctAnswersCount
       };
     case "RESTART":
       return initialState;
