@@ -1,7 +1,9 @@
 import Answer from "./Answer";
+import { shuffle } from "../utils/helpers";
 
 const Question = ({ question, answers, correctAnswer }) => {
   answers = [...answers, correctAnswer];
+  answers = shuffle(answers);
 
   return (
     <div className="text-center shadow-md select-none">
