@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { QuizContext } from "../contexts/quiz";
 import Button from "./Button";
 import Question from "./Question";
+import Results from "./Results";
 
 const Quiz = () => {
   const {
@@ -10,15 +11,17 @@ const Quiz = () => {
       currentIndex,
       selectedAnswer,
       shuffledAnswers,
-      showResults
+      showResults,
+      correctAnswers
     },
     dispatch
   } = useContext(QuizContext);
 
   const quiz = quizData[currentIndex];
 
-  console.log("Quiz", showResults);
-  if (showResults) return <h2>Hey</h2>;
+  if (showResults)
+    return <Results correctAnswers={correctAnswers} total={quizData.length} />;
+
   return (
     <div className="w-3/4 min-h-screen shadow-xl mx-auto p-2 flex flex-col">
       <div className="text-center mb-2 p-2 text-slate-800">

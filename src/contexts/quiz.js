@@ -8,7 +8,8 @@ const initialState = {
   quizData: getQuizData(),
   currentIndex: 0,
   selectedAnswer: "",
-  showResults: false
+  showResults: false,
+  correctAnswers: 0
 };
 
 const reducer = (state, action) => {
@@ -22,13 +23,22 @@ const reducer = (state, action) => {
       return { ...state, shuffledAnswers };
     case "NEXT_QUESTION":
       const showResults = state.currentIndex === state.quizData.length - 1;
-      const currentIndex = showResults ? state.currentIndex : state.currentIndex + 1;
+      const currentIndex = showResults
+        ? state.currentIndex
+        : state.currentIndex + 1;
+      const correctAnswers =
+        state.selectedAnswer ===
+        state.quizData[state.currentIndex].correctAnswer
+          ? correctAnswers + 1
+          : correctAnswers;
+      const selectedAnswer = "";
 
       return {
         ...state,
         currentIndex,
-        selectedAnswer: "",
-        showResults
+        selectedAnswer,
+        showResults,
+        correctAnswers
       };
     default:
       return state;
