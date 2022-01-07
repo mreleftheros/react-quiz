@@ -8,7 +8,13 @@ const Button = ({ children, type, isDisabled, dispatch }) => {
       className={`text-slate-200 cursor-pointer px-4 py-3 rounded-lg text-xl ${btnClass}`}
       type={type}
       disabled={isDisabled}
-      onClick={() => dispatch({ type: "NEXT_QUESTION" })}
+      onClick={() => {
+        if (type === "next") {
+          dispatch({ type: "NEXT_QUESTION" });
+        } else if (type === "restart") {
+          dispatch({ type: "RESTART" });
+        }
+      }}
     >
       {children}
     </button>
@@ -16,7 +22,7 @@ const Button = ({ children, type, isDisabled, dispatch }) => {
 };
 
 Button.defaultProps = {
-  type: "submit",
+  type: "next",
   isDisabled: true
 };
 

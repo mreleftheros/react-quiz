@@ -20,11 +20,17 @@ const Quiz = () => {
   const quiz = quizData[currentIndex];
 
   if (showResults)
-    return <Results correctAnswers={correctAnswers} total={quizData.length} />;
+    return (
+      <Results
+        correctAnswers={correctAnswers}
+        total={quizData.length}
+        dispatch={dispatch}
+      />
+    );
 
   return (
-    <div className="w-3/4 min-h-screen shadow-xl mx-auto p-2 flex flex-col">
-      <div className="text-center mb-2 p-2 text-slate-800">
+    <div className="w-3/4 min-h-screen shadow-xl mx-auto p-2 flex flex-col text-slate-900">
+      <div className="text-center mb-2 p-2">
         <h2 className="font-bold text-2xl mb-2">Take the Quiz!</h2>
         <div className="text-md">
           Current Question {currentIndex + 1}/{quizData.length}
