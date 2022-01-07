@@ -1,12 +1,11 @@
-import { createContext, useReducer, useEffect } from "react";
-import { getQuizData } from "../data/quiz";
+import { createContext, useReducer } from "react";
 import { shuffleAnswers } from "../utils/helpers";
 
 export const QuizContext = createContext();
 
 const initialState = {
-  questions: getQuizData(),
-  answers: shuffleAnswers(getQuizData()[0]) || [],
+  questions: [],
+  answers: [],
   currentIndex: 0,
   selectedAnswer: "",
   showResults: false,
@@ -15,6 +14,20 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "FETCH_QUESTIONS":
+      const questions = action.payload.map(result => ({
+        question: result.question,
+        answers: result.incorrect_answers,
+        correctAnswer: result.correct_answer
+      }));
+
+      console.log(questions);
+
+      return {
+        ...state,
+        questions,
+        answers: shuffleAnswers(questions[0])
+      };
     case "SELECT_ANSWER":
       return { ...state, selectedAnswer: action.payload };
     case "NEXT_QUESTION":
