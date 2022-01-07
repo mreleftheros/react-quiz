@@ -10,7 +10,7 @@ const Question = ({
 }) => {
   return (
     <div>
-      <h2 className="bg-green-500 text-slate-200 text-4xl font-bold p-4 pl-6 rounded mb-4">
+      <h2 className="bg-green-500 text-slate-100 text-4xl font-bold p-4 pl-6 rounded mb-4 text-center">
         {`${currentIndex + 1}. `}
         {question}
       </h2>

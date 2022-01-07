@@ -31,14 +31,14 @@ const Quiz = () => {
     );
 
   return (
-    <div className="w-3/4 min-h-screen shadow-xl mx-auto p-2 flex flex-col text-slate-900">
+    <div className="w-3/4 min-h-screen mx-auto flex flex-col text-slate-900 bg-white">
       <div className="text-center mb-2 p-2">
         <h2 className="font-bold text-3xl mb-2">Take the Quiz!</h2>
-        <div className="text-md">
+        <div className="text-xl">
           Current Question {currentIndex + 1}/{quizData.length}
         </div>
       </div>
-      <div className="flex flex-col justify-around flex-auto">
+      <div className="flex flex-col justify-around flex-auto shadow-xl w-4/5 mx-auto">
         <Question
           question={quiz.question}
           answers={shuffledAnswers || []}

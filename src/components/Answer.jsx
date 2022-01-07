@@ -26,7 +26,7 @@ const Answer = ({
         onSelectAnswer(answer);
       }}
     >
-      <div className="bg-purple-700 text-slate-200 p-4 text-4xl">{letter}</div>
+      <div className="bg-purple-700 text-slate-100 p-4 text-4xl">{letter}</div>
       <h2 className="flex-auto p-4 text-3xl flex justify-center items-center">
         {answer}
       </h2>
