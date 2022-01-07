@@ -4,7 +4,8 @@ import Button from "./Button";
 import Question from "./Question";
 import Results from "./Results";
 
-const triviaApi = "https://opentdb.com/api.php?amount=10&type=multiple";
+const triviaApi =
+  "https://opentdb.com/api.php?amount=10&type=multiple&encode=url3986";
 
 const Quiz = () => {
   const {

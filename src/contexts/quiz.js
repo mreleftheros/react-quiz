@@ -16,9 +16,9 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_QUESTIONS":
       const questions = action.payload.map(result => ({
-        question: result.question,
-        answers: result.incorrect_answers,
-        correctAnswer: result.correct_answer
+        question: decodeURIComponent(result.question),
+        answers: decodeURIComponent(result.incorrect_answers).split(","),
+        correctAnswer: decodeURIComponent(result.correct_answer)
       }));
 
       console.log(questions);
