@@ -27,7 +27,7 @@ const Quiz = () => {
       .then(res => res.json())
       .then(data => {
         dispatch({ type: "FETCH_QUESTIONS", payload: data.results });
-        // setIsLoading(false);
+        setIsLoading(false);
       });
   }, []);
 
