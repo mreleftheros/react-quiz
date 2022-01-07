@@ -4,7 +4,7 @@ const Answer = ({ index, answer, onSelectAnswer }) => {
 
   return (
     <div
-      className="basis-1/3 m-4 shadow text-slate-800 flex rounded cursor-pointer transition-transform delay-75 ease-out hover:scale-95"
+      className="basis-1/3 m-4 shadow text-slate-800 flex rounded overflow-hidden cursor-pointer transition-transform delay-75 ease-out hover:scale-95"
       onClick={() => onSelectAnswer(answer)}
     >
       <div className="bg-purple-700 text-slate-200 p-4 text-4xl">{letter}</div>

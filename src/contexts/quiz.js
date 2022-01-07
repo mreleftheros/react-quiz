@@ -7,7 +7,8 @@ export const QuizContext = createContext();
 const initialState = {
   quizData: getQuizData(),
   currentIndex: 0,
-  selectedAnswer: ""
+  selectedAnswer: "",
+  showResults: false
 };
 
 const reducer = (state, action) => {
@@ -20,10 +21,14 @@ const reducer = (state, action) => {
 
       return { ...state, shuffledAnswers };
     case "NEXT_QUESTION":
+      const showResults = state.currentIndex === state.quizData.length - 1;
+      const currentIndex = showResults ? state.currentIndex : state.currentIndex + 1;
+
       return {
         ...state,
-        currentIndex: state.currentIndex + 1,
-        selectedAnswer: ""
+        currentIndex,
+        selectedAnswer: "",
+        showResults
       };
     default:
       return state;

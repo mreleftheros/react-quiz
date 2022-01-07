@@ -5,11 +5,13 @@ const Question = ({
   answers,
   correctAnswer,
   selectedAnswer,
+  currentIndex,
   dispatch
 }) => {
   return (
-    <div className="text-center">
-      <h2 className="bg-green-400 text-slate-200 text-4xl font-bold p-4">
+    <div>
+      <h2 className="bg-green-500 text-slate-200 text-4xl font-bold p-4 pl-6 rounded">
+        {`${currentIndex + 1}. `}
         {question}
       </h2>
       <div className="grid md:grid-cols-2 md:grid-rows-2 select-none">
