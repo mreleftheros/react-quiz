@@ -28,7 +28,9 @@ const Quiz = () => {
           selectedAnswer={selectedAnswer}
           dispatch={dispatch}
         />
-        <Button />
+        <Button isDisabled={!selectedAnswer} dispatch={dispatch}>
+          Next Question
+        </Button>
       </div>
     </div>
   );
