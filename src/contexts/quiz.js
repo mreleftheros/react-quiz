@@ -19,6 +19,8 @@ const reducer = (state, action) => {
       const shuffledAnswers = shuffle([...quiz.answers, quiz.correctAnswer]);
 
       return { ...state, shuffledAnswers };
+    case "NEXT_QUESTION":
+      return { ...state, currentIndex: state.currentIndex + 1 };
     default:
       return state;
   }
