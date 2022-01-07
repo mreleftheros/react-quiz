@@ -2,7 +2,7 @@ import Answer from "./Answer";
 
 const Question = () => {
   return (
-    <div className="text-center shadow-md">
+    <div className="text-center shadow-md select-none">
       <h2 className="bg-green-400 text-slate-200 text-4xl font-bold p-4">
         Question
       </h2>

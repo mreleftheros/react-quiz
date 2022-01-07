@@ -1,9 +1,12 @@
 import Quiz from "./components/Quiz";
+import QuizProvider from "./contexts/quiz";
 
 function App() {
   return (
     <div className="bg-slate-200">
-      <Quiz />
+      <QuizProvider>
+        <Quiz />
+      </QuizProvider>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 const Button = ({ type, isDisabled }) => {
   const btnClass = isDisabled
-    ? "bg-purple-300"
+    ? "bg-purple-400"
     : "bg-purple-700 hover:opacity-90 transition-opacity duration-150 ease-out";
 
   return (
