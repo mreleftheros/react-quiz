@@ -1,5 +1,7 @@
-export const shuffle = arr => {
-  return arr
+export const shuffleAnswers = question => {
+  const unShuffledAnswers = [...question.answers, question.correctAnswer];
+
+  return unShuffledAnswers
     .map(item => ({ item, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(i => i.item);
