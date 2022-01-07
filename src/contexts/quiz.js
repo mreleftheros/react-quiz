@@ -6,7 +6,7 @@ export const QuizContext = createContext();
 
 const initialState = {
   questions: getQuizData(),
-  answers: shuffleAnswers(getQuizData()[0]),
+  answers: shuffleAnswers(getQuizData()[0]) || [],
   currentIndex: 0,
   selectedAnswer: "",
   showResults: false,
