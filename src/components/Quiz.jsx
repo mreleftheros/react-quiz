@@ -16,7 +16,7 @@ const Quiz = () => {
         </div>
       </div>
       <div className="flex flex-col justify-around items-center flex-auto">
-        <Question question={quizData[currentIndex].question} />
+        <Question {...quizData[currentIndex]} />
         <Button />
       </div>
     </div>
