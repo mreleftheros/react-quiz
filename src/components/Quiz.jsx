@@ -5,11 +5,13 @@ import Question from "./Question";
 
 const Quiz = () => {
   const {
-    state: { quizData, currentIndex, selectedAnswer },
+    state: { quizData, currentIndex, selectedAnswer, shuffledAnswers },
     dispatch
   } = useContext(QuizContext);
-  console.log("Quiz", quizData, currentIndex, selectedAnswer);
 
+  const quiz = quizData[currentIndex];
+
+  // console.log("Quiz", quizData, currentIndex, selectedAnswer);
   return (
     <div className="w-3/4 min-h-screen shadow-xl mx-auto p-2 flex flex-col">
       <div className="text-center mb-2 p-2 text-slate-800">
@@ -19,7 +21,13 @@ const Quiz = () => {
         </div>
       </div>
       <div className="flex flex-col justify-around items-center flex-auto">
-        <Question {...quizData[currentIndex]} dispatch={dispatch} />
+        <Question
+          question={quiz.question}
+          answers={shuffledAnswers || []}
+          correctAnswer={quiz.correctAnswer}
+          selectedAnswer={selectedAnswer}
+          dispatch={dispatch}
+        />
         <Button />
       </div>
     </div>

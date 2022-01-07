@@ -1,9 +1,12 @@
 import Answer from "./Answer";
-import { shuffle } from "../utils/helpers";
 
-const Question = ({ question, answers, correctAnswer, dispatch }) => {
-  answers = [...answers, correctAnswer];
-  answers = shuffle(answers);
+const Question = ({
+  question,
+  answers,
+  correctAnswer,
+  selectedAnswer,
+  dispatch
+}) => {
 
   return (
     <div className="text-center">
