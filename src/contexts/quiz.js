@@ -4,6 +4,7 @@ import { shuffleAnswers } from "../utils/helpers";
 export const QuizContext = createContext();
 
 const initialState = {
+  isLoading: true,
   questions: [],
   answers: [],
   currentIndex: 0,
@@ -23,6 +24,7 @@ const reducer = (state, action) => {
 
       return {
         ...state,
+        isLoading: false,
         questions,
         answers: shuffleAnswers(questions[0])
       };

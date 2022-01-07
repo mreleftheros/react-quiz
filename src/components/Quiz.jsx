@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { QuizContext } from "../contexts/quiz";
 import Button from "./Button";
 import Question from "./Question";
@@ -16,20 +16,21 @@ const Quiz = () => {
       currentIndex,
       selectedAnswer,
       showResults,
-      correctAnswersCount
+      correctAnswersCount,
+      isLoading
     },
     dispatch
   } = useContext(QuizContext);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (questions.length > 0) return;
+
     fetch(triviaApi)
       .then(res => res.json())
       .then(data => {
         dispatch({ type: "FETCH_QUESTIONS", payload: data.results });
-        setIsLoading(false);
       });
-  }, []);
+  }, [isLoading]);
 
   if (isLoading)
     return (
