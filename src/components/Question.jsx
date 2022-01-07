@@ -1,7 +1,7 @@
 import Answer from "./Answer";
 
 const Question = ({ question, answers, correctAnswer }) => {
-  console.log("Question", question);
+  answers = [...answers, correctAnswer];
 
   return (
     <div className="text-center shadow-md select-none">
@@ -9,7 +9,9 @@ const Question = ({ question, answers, correctAnswer }) => {
         {question}
       </h2>
       <div className="flex flex-wrap justify-center">
-      
+        {answers.map((answer, index) => (
+          <Answer key={index} index={index} answer={answer} />
+        ))}
       </div>
     </div>
   );
